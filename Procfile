@@ -1,0 +1,1 @@
+web: gunicorn ukrainian_recipes.wsgi
