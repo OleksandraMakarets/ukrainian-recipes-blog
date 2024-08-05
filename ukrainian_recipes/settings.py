@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-oleksandram-ukrainianre-zlosb2bi4x9.ws.codeinstitute-ide.net','.herokuapp.com']
 
@@ -91,7 +91,7 @@ DATABASES = {
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-oleksandram-ukrainianre-zlosb2bi4x9.ws.codeinstitute-ide.net',
-    'https://ukrainian-recipesblog-5db2d3bf9e1c.herokuapp.com/',
+    'https://ukrainian-recipesblog-5db2d3bf9e1c.herokuapp.com',
 ]
 
 # Password validation
