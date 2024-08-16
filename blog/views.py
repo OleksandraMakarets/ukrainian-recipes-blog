@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib import messages
 from django.views import generic
-from django.contrib import messages  # Імпорт для використання повідомлень
-from .models import Post
+from django.contrib.auth.models import User
+from .models import Post, Comment
 from .forms import CommentForm
 
 # Create your views here.
@@ -37,7 +38,7 @@ def post_detail(request, slug):
             comment.author = request.user
             comment.post = post
             comment.save()
-            # Додати повідомлення про успіх
+            # Add success message
             messages.add_message(
                 request, messages.SUCCESS,
                 'Comment submitted and awaiting approval'
@@ -57,3 +58,32 @@ def post_detail(request, slug):
             "comment_form": comment_form,
         },
     )
+
+def profile_page(request):
+    """
+    Display the profile page of the currently logged-in user.
+
+    **Context**
+
+    ``user``
+        An instance of :model:`auth.User`.
+    ``comments``
+        A queryset of comments made by the user.
+
+    **Template:**
+
+    :template:`profile_page.html`
+    """
+    # Get the currently logged-in user
+    user = get_object_or_404(User, pk=request.user.pk)
+    # Get all comments made by the user
+    comments = user.comments.all()
+
+    # Prepare context for rendering
+    context = {
+        'user': user,
+        'comments': comments,
+    }
+
+    return render(request, 'profile_page.html', context)
+
