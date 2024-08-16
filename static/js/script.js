@@ -1,1 +1,0 @@
-console.log("Enjoying delicious food is a part of our life. Seek out new recipes and taste new dishes!");
