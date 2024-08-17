@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
@@ -20,13 +20,18 @@ def post_detail(request, slug):
 
     ``post``
         An instance of :model:`blog.Post`.
+    ``comments``
+        A queryset of approved comments related to the post.
+    ``comment_count``
+        The total number of approved comments for the post.
+    ``comment_form``
+        A form instance for submitting a new comment.
 
     **Template:**
 
     :template:`blog/post_detail.html`
     """
 
-    # Get the post object or 404 if not found
     post = get_object_or_404(Post.objects.filter(status=1), slug=slug)
     comments = post.comments.all().order_by("-created_on")
     comment_count = post.comments.filter(approved=True).count()
@@ -38,12 +43,10 @@ def post_detail(request, slug):
             comment.author = request.user
             comment.post = post
             comment.save()
-            # Add success message
             messages.add_message(
                 request, messages.SUCCESS,
                 'Comment submitted and awaiting approval'
             )
-            # Redirect to the same post detail page to avoid resubmission on refresh
             return redirect('post_detail', slug=post.slug)
     else:
         comment_form = CommentForm()
@@ -61,10 +64,25 @@ def post_detail(request, slug):
 
 def comment_edit(request, slug, comment_id):
     """
-    view to edit comments
-    """
-    if request.method == "POST":
+    Handles editing an existing comment.
 
+    This view allows a user to edit their own comment on a blog post.
+    If the comment is successfully updated, it is marked as not approved
+    until re-moderated.
+
+    **Parameters:**
+
+    - `request`: The HTTP request object.
+    - `slug`: The slug of the blog post related to the comment.
+    - `comment_id`: The ID of the comment to be edited.
+
+    **Returns:**
+
+    - A redirect to the post detail page after the comment is edited
+      or if there was an error during editing.
+    """
+
+    if request.method == "POST":
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comment = get_object_or_404(Comment, pk=comment_id)
@@ -83,8 +101,24 @@ def comment_edit(request, slug, comment_id):
 
 def comment_delete(request, slug, comment_id):
     """
-    view to delete comment
+    Handles deleting a comment.
+
+    This view allows a user to delete their own comment on a blog post.
+    If the comment is successfully deleted, a success message is displayed.
+    If the user tries to delete a comment they do not own, an error message is shown.
+
+    **Parameters:**
+
+    - `request`: The HTTP request object.
+    - `slug`: The slug of the blog post related to the comment.
+    - `comment_id`: The ID of the comment to be deleted.
+
+    **Returns:**
+
+    - A redirect to the post detail page after the comment is deleted or
+      if there was an error during deletion.
     """
+
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
     comment = get_object_or_404(Comment, pk=comment_id)
@@ -112,16 +146,15 @@ def profile_page(request):
 
     :template:`profile_page.html`
     """
-    # Get the currently logged-in user
+
     user = get_object_or_404(User, pk=request.user.pk)
-    # Get all comments made by the user
     comments = user.comments.all()
 
-    # Prepare context for rendering
     context = {
         'user': user,
         'comments': comments,
     }
 
     return render(request, 'profile_page.html', context)
+
 
