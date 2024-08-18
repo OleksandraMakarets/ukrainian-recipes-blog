@@ -1,131 +1,472 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# UkrainianRecipes|Blog
 
-Welcome Oleksandra Makarets,
+The blog runs in the Code Institute's mock terminal on Heroku.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![UkrainianRecipes|Blog](media/first.jpg)
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+he blog runs in the Code Institute's mock terminal on Heroku.
 
-## Gitpod Reminders
+The live link can be found here: [UkrainianRecipes|Blog](https://ukrainian-recipesblog-5db2d3bf9e1c.herokuapp.com/).
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+The admin link can be found here: [UkrainianRecipes|Blog](https://ukrainian-recipesblog-5db2d3bf9e1c.herokuapp.com/admin/login/?next=/admin/)
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+# Introduction
 
-Another blue button should appear to click: _Open Browser_.
+Our culinary blog is created for everyone who loves to cook and explore new, interesting recipes. Here, you'll find detailed step-by-step recipes of Ukrainian cuisine, celebrating the rich and diverse culinary traditions of Ukraine. It’s a place where you can discover unique recipes, try something new, and discuss your experiences with other cooking enthusiasts.
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+All visitors can browse recipes, share them with friends, and leave comments on posts. Comments are a great way to discuss recipes, exchange tips, or ask questions. However, all comments must be approved by an administrator before they become visible on the site. This helps maintain a pleasant atmosphere and ensures valuable discussions.
 
-A blue button should appear to click: _Make Public_,
+Users also have the opportunity to submit their own Ukrainian recipes or propose collaborations through the "About Us" page. If your recipe is approved by the administrator, it will be published on the site with your name. This way, you can share your culinary masterpieces with others and become part of our cooking community.
 
-Another blue button should appear to click: _Open Browser_.
+Our administrators can log into the control panel to create, edit, and delete posts, as well as manage comments and user submissions.
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Project Goals
 
-To log into the Heroku toolbelt CLI:
+### Promote Ukrainian Culinary Traditions:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- Showcase the rich and diverse flavors of Ukrainian cuisine, making traditional recipes accessible to a global audience
+- Preserve and share authentic recipes passed down through generations, ensuring the continued appreciation of Ukrainian culinary heritage.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+### Foster a Cooking Community:
 
-### Connecting your Mongo database
+- Create an engaging platform where cooking enthusiasts can share their experiences, tips, and recipes, building a vibrant community centered around Ukrainian cuisine.
+- Encourage user interaction through comments and recipe submissions, allowing for a collaborative and supportive environment.
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+### Provide High-Quality Content:
 
-------
+- Offer detailed, easy-to-follow recipes with clear instructions and high-quality images, ensuring a positive user experience.
+- Maintain the accuracy and authenticity of all content, with a focus on traditional Ukrainian ingredients and cooking methods.
+  
+### Support User Contributions:
 
-## Release History
+- Enable users to submit their own Ukrainian recipes, fostering a sense of ownership and participation in the community.
+- Ensure a streamlined submission and approval process, allowing user-generated content to be featured alongside expert recipes.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Ensure a Positive User Experience:
 
-**June 18, 2024,** Add Mongo back into template
+- Design an intuitive, user-friendly website that is easy to navigate, with responsive design for seamless use on all devices.
+- Moderate comments and user submissions to maintain a positive, respectful atmosphere on the site.
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+## User Experience (UX)
 
-**May 28 2024:** Fix Mongo and Links installs
+### User Onboarding:
 
-**April 26 2024:** Update node version to 16
+__Homepage Design:__
+- The homepage features a clean and straightforward layout, providing a brief introduction about the blog. Users have options to log in or register on the site.
 
-**September 20 2023:** Update Python version to 3.9.17.
+### Browsing and Navigation:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+__Recipe Viewing__
+-  Users can access and view individual Ukrainian recipes directly. Each recipe includes a list of ingredients, step-by-step cooking instructions, and a high-quality photograph of the finished dish.
+__Responsive Design:__
+- The site is fully responsive, ensuring a seamless experience on both desktop and mobile devices.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### Interactions and Engagement:
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+__Commenting System:__
+-  Users can leave comments on recipes to share feedback or ask questions. Comments require administrator approval before being visible.
+__Submitting Recipes:__
+- Users can submit their own Ukrainian recipes via a dedicated submission page with a simple form.
+__Notification System:__
+- The site is fully responsive, ensuring a seamless experience on both desktop and mobile devices.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### Content Management:
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+__Administrator Dashboard:__
+-  Admins can manage content, approve comments, and review user-submitted recipes through a streamlined dashboard interface.
+__Content Approval Workflow:__
+- A structured approval process ensures that only high-quality, authentic content is published.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### Accessibility:
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+__Accessible Design:__
+-  The site includes features for screen readers, high-contrast themes, and keyboard navigation to ensure accessibility for all users.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Visual and Aesthetic Design:
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+__Consistent Branding:__
+-  The site’s design uses a warm, inviting color palette reflective of Ukrainian culture. Recipes are presented with clear instructions and vibrant images, enhancing the overall user experience.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## User Stories
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### First Time Visitor Goals
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+  - As a first-time visitor, I want to quickly understand what the blog is about and see examples of Ukrainian recipes so that I can decide if this site meets my interests.
+  - As a new user, I want to easily browse and view individual recipes to explore the content and see if I want to try any dishes.
+  - As a first-time visitor, I want to have the option to register or log in if I decide to interact more with the site, such as leaving comments or submitting recipes.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+  ### Authenticated User Goals
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+  - As an authenticated user, I want to leave comments on recipes to share my feedback, ask questions, or engage in discussions.
+  - As a registered user, I want to submit my own Ukrainian recipes so that I can contribute to the blog and share my culinary creations with others.
+  - As an authenticated user, I want to receive notifications about the status of my comments and recipe submissions so that I am informed about interactions and updates.
 
-------
+  ### Site Owner Objectives
 
-## FAQ about the uptime script
+  - As a site owner, I want to have an efficient content management system to create, edit, and delete posts, ensuring that the blog stays up-to-date and relevant.
+  - As a site owner, I want to review and approve user comments and recipe submissions to maintain high quality and authenticity of the content.
+  - As a site owner, I want to ensure the site is accessible and performs well across different devices to provide a positive experience for all users.
+  - As a site owner, I want to analyze user interactions and feedback to continuously improve the site and engage the community effectively.
+  
+## Blog Models
 
-**Why have you added this script?**
+### Post Model
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+| Field            | Type                 | Validation                                      |
+|------------------|----------------------|-------------------------------------------------|
+| `id`             | AutoField            | Primary Key                                     |
+| `title`          | CharField            | `max_length=200`, `unique=True`                 |
+| `slug`           | SlugField            | `max_length=200`, `unique=True`                 |
+| `author`         | ForeignKey           | `User`, `on_delete=models.CASCADE`, `related_name="blog_posts"` |
+| `featured_image` | CloudinaryField      | `'image'`, `default='placeholder'`              |
+| `content`        | TextField            |                                                 |
+| `created_on`     | DateTimeField        | `auto_now_add=True`                             |
+| `ingredients`    | TextField            | `blank=True`                                    |
+| `instructions`   | TextField            | `blank=True`                                    |
+| `cooking_time`   | PositiveIntegerField | `null=True`, `blank=True`                       |
+| `status`         | IntegerField         | `choices=STATUS`, `default=0`                   |
+| `excerpt`        | TextField            | `blank=True`                                    |
+| `updated_on`     | DateTimeField        | `auto_now=True`                                 |
 
-**How will this affect me?**
+### Comment Model
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+| Key         | Field Type      | Validation                                      |
+|-------------|-----------------|-------------------------------------------------|
+| `id`        | AutoField       | Primary Key                                     |
+| `post`      | ForeignKey      | `Post`, `on_delete=models.CASCADE`, `related_name="comments"` |
+| `author`    | ForeignKey      | `User`, `on_delete=models.CASCADE`, `related_name="commenter"` |
+| `body`      | TextField       |                                                 |
+| `approved`  | BooleanField    | `default=False`                                 |
+| `created_on`| DateTimeField   | `auto_now_add=True`                             |
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+### About Model
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+| Key            | Field Type      | Validation                                      |
+|----------------|-----------------|-------------------------------------------------|
+| `id`           | AutoField       | Primary Key                                     |
+| `title`        | CharField       | `max_length=200`, `unique=True`                 |
+| `profile_image`| CloudinaryField | `default='placeholder'`                        |
+| `updated_on`   | DateTimeField   | `auto_now=True`                                 |
+| `content`      | TextField       |                                                 |
 
-**So….?**
+### CollaborateRequest Model
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+| Key    | Field Type   | Validation               |
+|--------|--------------|---------------------------|
+| `id`   | AutoField    | Primary Key               |
+| `name` | CharField    | `max_length=200`          |
+| `email`| EmailField   |                           |
+| `message`| TextField  |                           |
+| `read` | BooleanField | `default=False`           |
 
-**Can I opt out?**
+## Visual Design:
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+### Colors
+- Consistent Branding: Utilizes a rich blue (#0033A0) as the primary color, complemented by vibrant gold (#FFD700) and clean white (#FFFFFF). This color scheme is enhanced with culturally inspired design elements that reflect a sophisticated yet inviting aesthetic.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+![Colors](media/colors.jpg)
 
-**Anything more?**
+## Features
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+### Existing Features
 
----
+- __Homepage Overview:__
 
-Happy coding!
+  - Introduction: Provides a brief introduction to the blog's focus on Ukrainian cuisine. 
+  
+  ![User-Friendly Interface](media/first.jpg)
+
+  - Login/Register: Options for users to log in or register for an account
+  
+  ![Register](media/singUp.jpg)
+  ![Login](media/singIn.jpg)
+
+- __About Page:__
+
+  - Author Information: Provides details about the author of the site, including their background, expertise, and passion for Ukrainian cuisine.
+  - Site Objectives: Outlines the goals and purpose of the blog, including its mission to share authentic Ukrainian recipes and build a community of cooking enthusiasts.
+  
+  ![Post](media/about.jpg)
+
+- __Recipe Viewing:__
+
+  - Detailed Recipes: Each recipe includes ingredients, step-by-step instructions, and a high-quality photo of the dish.
+  
+  ![Post](media/post.jpg)
+
+- __Commenting System:__
+
+  - Comment Submission: Authenticated users can leave comments on recipes. Users must be logged in to submit comments.
+  
+  ![Write comment](media/write-coment.jpg)
+  ![Register](media/coment.jpg)
+
+  - Comment Management: Users can edit or delete their own comments after posting.
+
+  ![Edit/Delate](media/coments.register.jpg)
+
+  - Moderation: All comments are subject to administrator approval before being visible on the site.
+  
+  ![Moderation](media/apruved.jpg)
+
+- __Recipe Submission:__
+  - Submission Form: Registered users can submit their own Ukrainian recipes using a dedicated submission form.
+  - Approval Workflow: Submitted recipes are reviewed and approved by administrators before being published.
+  
+  ![Submission](media/collaborat.jpg)
+
+- __Notification System:__
+
+  - Comment Notifications: Users are notified when their comments are approved and published.
+  -  Submission Notifications: Users receive updates when their submitted recipes are approved and featured on the site.
+
+  ![Notification System](media/notice.jpg)
+
+- __Content Management:__
+
+  - Administrator Dashboard: Admins can create, edit, and delete posts through a user-friendly dashboard.
+  - Content Approval: Admins manage and approve user comments and recipe submissions to maintain content quality.
+
+  ![Content Management:](media/admin_y.jpg)
+
+  - __Footer Links:__
+
+  - Social Media Links: The footer includes links to the blog's social media profiles, allowing users to connect and engage with the blog on platforms such as Facebook, Instagram, and Twitter.
+
+  ![Footer Page](media/footer.jpg)
+
+- __Responsive Design:__
+
+  - Mobile and Desktop Compatibility: The site is designed to work seamlessly across both mobile devices and desktop computers.
+  
+
+### Features left to implement
+
+- __Like Button: The ability for users to like or upvote recipes is not yet implemented.__
+- __Save to Favorites: Users cannot currently add recipes to a personal list of favorites or bookmarked recipes.__
+- __Filter Options: There is no functionality to filter recipes by categories such as ingredient type, difficulty, or preparation time.__
+- __Keyword Search: The ability to search for recipes using keywords or ingredients is not yet available.__
+- __Profile Editing: Users are unable to modify their profile information or update personal details.__
+- __Profile Photos: There is no option for users to add or change their profile pictures.__
+
+## Testing
+
+### Homepage Testing
+| Tested              | Expected Result                                                             | Actual Result                                                                                   |
+|---------------------|-----------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
+| Opened the homepage | The homepage should display a list of blog posts, each with a title, description, ingredients, instructions, and a photo. | The homepage correctly displayed posts with titles, descriptions, ingredients, instructions, and photos. |
+
+
+
+### Recipe Post Testing
+
+| Tested                        | Expected Result                                                                                  | Actual Result                                                                      |
+|-------------------------------|--------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
+| Viewed individual recipe posts | Each recipe post should display a detailed view including ingredients, step-by-step instructions, and a high-quality photo of the dish. | Recipe posts displayed correctly with ingredients, instructions, and photos as expected. |
+
+### About Page Testing
+
+| Tested                  | Expected Result                                                                                             | Actual Result                                                                         |
+|-------------------------|-------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+| Accessed the About page | The About page should provide information about the author and a form for collaboration requests.         | The About page correctly displayed the author’s information and the collaboration request form. |
+
+
+### User Authentication Testing
+
+| Tested                     | Expected Result                                                                  | Actual Result                                                   |
+|----------------------------|----------------------------------------------------------------------------------|----------------------------------------------------------------|
+| Registered a new user      | The registration process should successfully create a new user account.          | New user accounts were created successfully.                   |
+| Logged in and out          | Registered users should be able to log in and log out of their accounts.         | Login and logout functions worked correctly.                    |
+| Password reset functionality | Users should be able to reset their password through the password recovery process. | Password reset process was successfully completed.              |
+
+### Commenting System Testing
+
+
+| Tested                            | Expected Result                                                                                           | Actual Result                                                                        |
+|-----------------------------------|-----------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
+| Added a comment as a registered user | Registered users should be able to post, edit, and delete their own comments.                            | Comments were successfully added, edited, and deleted by registered users.          |
+| Attempted to comment without being logged in | Users must be logged in to leave comments.                                                                 | The system correctly prevented non-logged-in users from posting comments.            |
+| Verified comment approval process | Comments should require administrator approval before being visible on the site.                        | All comments were held for administrator approval before appearing on the site.    |
+           |
+
+
+
+### Profile Management Testing
+
+| Tested               | Expected Result                                          | Actual Result                                             |
+|----------------------|----------------------------------------------------------|----------------------------------------------------------|
+| Edited user profile  | Users should be able to update their profile information. | Users were able to successfully edit their profile information. |
+| Updated profile photo | Users should be able to upload or change their profile photo. | Profile photo updates were completed successfully.      |
+
+
+### Security and Performance Testing
+
+| Tested                         | Expected Result                                                                                          | Actual Result                                                                          |
+|--------------------------------|----------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+| Tested for common security issues | The site should be secure against common vulnerabilities such as XSS or SQL injection.                  | The site was secure against common security threats.                                 |
+| Assessed site performance      | The site should load quickly and respond promptly to user actions.                                       | The site demonstrated good performance with fast loading times and responsive interactions. |
+
+
+### Cross-Browser and Cross-Platform Testing
+
+| Tested                                      | Expected Result                                                                                                           | Actual Result                                                                                             |
+|---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| Accessed site on different browsers and devices | The site should function consistently across various browsers (Chrome, Firefox, Safari) and devices (desktop, mobile). | The site performed well across different browsers and devices, maintaining consistency and functionality. |
+
+
+### Mobile Responsiveness Testing
+
+| Tested                           | Expected Result                                                                                         | Actual Result                                                                       |
+|----------------------------------|---------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+| Tested site on various mobile devices | The site should be fully responsive, providing an optimal user experience on mobile devices. | The site displayed correctly and functionally across various mobile devices. |
+
+
+### Accessibility Testing
+
+| Tested                      | Expected Result                                                                                              | Actual Result                                                                                     |
+|-----------------------------|--------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| Checked for accessibility features | The site should be accessible to users with disabilities, including screen reader compatibility and keyboard navigation. | The site met accessibility standards, including screen reader compatibility and effective keyboard navigation. |
+
+
+### Backup and Restore Testing
+
+| Tested                             | Expected Result                                                          | Actual Result                                             |
+|------------------------------------|--------------------------------------------------------------------------|----------------------------------------------------------|
+| Tested backup and restore functionality | The site’s data should be regularly backed up and restorable without issues. | Backups were successfully created and restored as expected. |
+
+
+### Internationalization Testing
+
+| Tested                       | Expected Result                                                    | Actual Result                                               |
+|------------------------------|--------------------------------------------------------------------|--------------------------------------------------------------|
+| Verified multi-language support | The site should display content correctly in multiple languages if supported. | The site displayed content correctly in supported languages. |
+
+
+###  Validation Testing
+
+__Python Validation Testing__
+
+- [PEP8](https://pep8ci.herokuapp.com/#) 
+  
+
+__HTML__
+
+![HTML](media/html.jpg)
+
+__CSS__
+![CSS](media/css.jpg)
+
+__Accessibility__
+![CSS](media/ass.jpg)
+
+
+### Bugs
+
+#### Solved bugs
+  
+- E501 line too long (90 > 79 characters)
+- E231 missing whitespace after ','
+- E302 expected 2 blank lines, found 1
+- 
+  
+### Unfixed Bugs
+
+- No unfixed bugs
+
+
+## Technologies Used
+
+- [HTML](https://html.com/html5/) used as the mark-up language.
+- [CSS](https://en.wikipedia.org/wiki/CSS) for styling.
+- [Python](https://www.python.org/) used as the programming language.
+- [Django](https://www.djangoproject.com/) framework inlluding some of the below frameworks.
+  - [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) for form styling and helpers.
+  - [Django allauth](https://django-allauth.readthedocs.io/en/latest/) provided templates for sign in, sign up and sign out.
+  - [Crispy Bootstrap 5] template pack for boostrap 5.
+  - [Django summernot] for rich text editor for adding posts.
+- [ElephantSQL](https://www.elephantsql.com/) database used.
+- [Bootstrap 5](https://pypi.org/project/crispy-bootstrap5/) for website styling.
+- [Cloudinary](https://cloudinary.com/) to store static files.
+- [GIT] for version control.
+- [GiHub](https://git-scm.com/) for repository and issues and project board.
+- [Codeanywhere](https://app.codeanywhere.com/) fs IDE.
+- [Heroku](https://www.heroku.com/) for website deployment.
+- [Google Fonts](https://fonts.google.com/) for typogoraphy.
+- [Font Awesome](https://fontawesome.com/) for website icons.
+- [Balsamiq](https://balsamiq.com/) for mobile wireframes.
+- [Excalidraw](https://excalidraw.com/) for desktop wireframes.
+- [Lucidchart](https://www.lucidchart.com/) for ERD diagram.
+- [Coolors](https://coolors.co/) for colour scheme.
+- [Shutterstock](https://www.shutterstock.com/) for 4 category images on index page.
+
+# Deployment
+
+### Deploy with Heroku
+
+1. Go on to [Heroku](https://www.heroku.com/) website and [log in](https://id.heroku.com/login) if you already have an account or [sign up](https://signup.heroku.com/) if you don't. 
+2. Click on the "New" button on the top right of the home page and select "Create new App" from the drop-down menu.
+3. In the "App name" field enter the name of your app. This name has to be unique. 
+    - Heroku displays a green tick if your app name is available.
+4. In the "Choose a region" field choose either the United States or Europe based on your location.
+5. Click the "Create app" button.
+6. Next page, top centre of the screen, select the "Settings" tab. 
+7. In the "Config Vars" section, click on the "Reveal config Vars" button.
+8. In this section you need to enter your environment variables. Usually stored in the env.py file locally. In my case, I have 10 variables: 
+    - SECRET_KEY - Django secret key.
+    - AWS_ACCESS_KEY_ID - Amazon AWS access key.
+    - AWS_SECRET_ACCESS_KEY - Amazon AWS secret access key.
+    - AWS_STORAGE_BUCKET_NAME - Amazon AWS bucket name.
+    - DATABASE_USER - Amazon RDS database user.
+    - EMAIL_HOST_PASS - Email password.
+    - EMAIL_HOST_USER - Email address.
+    - DATABASE_HOST - Amazon RDS database host.
+    - DATABASE_NAME - Amazon RDS database name.
+    - DATABASE_PASS - Amazon RDS database password.
+9. Copy and paste these variables into the KEY field and their values into the VALUE field.
+10. Go back to the top of the screen and select the "Deploy" tab.
+11. In the "Deployment method" section select "GitHub".
+    1. In "Connect to GitHub" click on the "Search" button. Find the project repository in the list and click on the "Connect" button.
+    2. Scroll to the bottom of that page. Click on the "Deploy Branch" button to deploy.
+    3. You should also see an option to enable automatic deployment. If you enable this, every time you push to GitHub, Heroku will automatically deploy the app.
+12. You will see build log scrolling at the bottom of the screen after that. When successfully finished building the app, you should see the link to your app.
+
+NB: You will need to add your Heroku app link to the ALLOWED_HOSTS in the settings.py file. You also need to make sure that DEBUG is set to False, requirements.txt and Procfile are up to date and pushed to GitHub.
+
+
+### Clone project 
+
+- To clone this project.  
+    - On my [GitHub](https://github.com/OleksandraMakarets) profile page, top centre of the screen click on "repositories".
+    -  Find and click on the "TechieMeme-PP4" repository.
+    - In the repository page that opens, click on the 'Code' button.
+    - Menu that opens make sure you are in the "local" tab, copy the link in "HTTPS".
+    - paste that link into the relevant section in your ide to clone the repository.
+        - CodeAnywhere. 
+        - - Click on the "New Workspace" and paste that link to the "Repository URL" field.
+        - vsCode. 
+        - - Select "File" and "New Window". In the middle of the page select "Clone Git Repository...", 
+        - - Paste that link into the search box at the top of the screen and hit enter.
+        - - Select the local destination for repository files.
+        
+
+### Fork repository
+
+- To fork this repository.
+    - Open my [GitHub repository](https://github.com/OleksandraMakarets/ukrainian-recipes-blog).
+    - Click on the 'Fork' button on the top right of the screen.
+    - On the 'Create a new fork' page you are given the option to rename that repository and then click on the green 'Create fork' button at the bottom of the form.
+
+
+
+## Credits
+
+### Content
+
+- I used the GPT chat to learn the rules of the game and create categories of words.
+- I used the Codestar Blog project as the foundation for my own project and I’m grateful for the excellent example it provided. Indeed, this blog project turned out to be the most challenging one I’ve tackled so far.[Codestar blog Code Institute](https://github.com/Code-Institute-Solutions/blog/tree/main)
+- [Dennis Ivy](https://www.youtube.com/channel/UCTZRcDjjkVajGL6wd76UnGg) He has the best Django tutorials on YouTube and the way he explains everything is very easy to understand. I owe a lot to him.
+
+## Author
+
+- [@oleksandramakarets](https://github.com/OleksandraMakarets)
